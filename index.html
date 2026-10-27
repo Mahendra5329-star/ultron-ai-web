@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="ULTRON AI — a futuristic browser-based AI assistant interface.">
+  <title>ULTRON AI — Command Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><div class="brand-name">ULTRON<span>.</span></div><div class="brand-sub">INTELLIGENCE SYSTEM</div></div>
+      </div>
+      <button class="new-chat" id="newChat"><span>＋</span> New session</button>
+      <div class="side-label">SYSTEM</div>
+      <button class="nav-item active" data-nav="center" type="button"><span class="nav-icon">◈</span> Command center <span class="nav-dot"></span></button>
+      <button class="nav-item" data-nav="quick" type="button"><span class="nav-icon">⌘</span> Quick commands</button>
+      <button class="nav-item" data-nav="history" type="button"><span class="nav-icon">◷</span> Session history</button>
+      <div class="side-bottom">
+        <div class="status-card"><span class="pulse"></span><div><strong>CORE ONLINE</strong><small>Browser interface active</small></div></div>
+        <div class="side-foot">ULTRON WEB v1.0 <span>•</span> BROWSER MODE</div>
+      </div>
+    </aside>
+
+    <section class="main-panel">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb"><span>ULTRON</span><b>/</b> COMMAND CENTER</div>
+        <div class="top-actions"><div class="top-status"><span class="pulse"></span><span>ALL SYSTEMS NOMINAL</span></div><button class="icon-button settings-button" id="settingsToggle" type="button" aria-label="Customize appearance" title="Customize appearance">⚙</button></div>
+      </header>
+
+      <section class="hero" id="hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> PERSONAL AI INTERFACE <span class="eyebrow-line"></span></div>
+        <div class="reactor"><div class="reactor-ring ring-a"></div><div class="reactor-ring ring-b"></div><div class="reactor-ring ring-c"></div><div class="reactor-core">U</div><div class="reactor-scan"></div></div>
+        <h1>Intelligence, <span>awaiting input.</span></h1>
+        <p class="hero-copy">Your browser-based command interface is ready.<br>State your objective. We will begin with what this device can actually do.</p>
+        <div class="quick-grid">
+          <button class="quick-card" data-command="What can you do?"><span class="quick-icon">◈</span><strong>System capabilities</strong><small>Explore available commands</small><span class="card-arrow">↗</span></button>
+          <button class="quick-card" data-command="Open YouTube"><span class="quick-icon">▶</span><strong>Open a website</strong><small>Launch a browser destination</small><span class="card-arrow">↗</span></button>
+          <button class="quick-card" data-command="What time is it?"><span class="quick-icon">◷</span><strong>Quick information</strong><small>Ask a simple question</small><span class="card-arrow">↗</span></button>
+        </div>
+      </section>
+
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="message assistant-message">
+          <div class="avatar">U</div>
+          <div class="message-body"><div class="message-meta">ULTRON <span>•</span> SYSTEM</div><p>Interface initialized. I can respond to built-in commands, open supported websites, and use your browser’s speech features when available. A connected AI model requires a secure backend.</p></div>
+        </div>
+      </section>
+
+      <section class="composer-wrap">
+        <div class="suggestion-row">
+          <button class="suggestion" data-command="Open Google">Open Google</button>
+          <button class="suggestion" data-command="Open YouTube">Open YouTube</button>
+          <button class="suggestion" data-command="Tell me a technology fact">Technology fact</button>
+        </div>
+        <form class="composer" id="commandForm">
+          <button class="tool-button" type="button" id="voiceButton" aria-label="Voice input" title="Voice input">⌁</button>
+          <input id="commandInput" autocomplete="off" placeholder="Enter a command for ULTRON..." aria-label="Enter a command" maxlength="1000">
+          <button class="send-button" type="submit" aria-label="Send command">➤</button>
+        </form>
+        <div class="composer-foot"><span><span class="tiny-dot"></span> LOCAL COMMAND MODE</span><span>Do not enter passwords or private information.</span></div>
+      </section>
+    </section>
+  </main>
+  <section class="customizer" id="customizer" aria-label="Appearance settings" aria-hidden="true">
+    <div class="customizer-head"><div><span class="eyebrow-mini">INTERFACE SETTINGS</span><h2>Customize ULTRON</h2></div><button class="icon-button" id="closeCustomizer" type="button" aria-label="Close settings">✕</button></div>
+    <p class="customizer-copy">Choose an accent and display mode. Your preference is saved on this device.</p>
+    <div class="setting-label">ACCENT COLOUR</div>
+    <div class="swatch-row" role="group" aria-label="Accent colour">
+      <button class="swatch active" data-accent="red" aria-label="Red accent" title="Red" type="button"><span></span></button>
+      <button class="swatch" data-accent="cyan" aria-label="Cyan accent" title="Cyan" type="button"><span></span></button>
+      <button class="swatch" data-accent="violet" aria-label="Violet accent" title="Violet" type="button"><span></span></button>
+      <button class="swatch" data-accent="green" aria-label="Green accent" title="Green" type="button"><span></span></button>
+      <button class="swatch" data-accent="amber" aria-label="Amber accent" title="Amber" type="button"><span></span></button>
+    </div>
+    <div class="setting-label">DISPLAY MODE</div>
+    <div class="mode-row"><button class="mode-choice active" data-mode="dark" type="button">☾ <span>Dark</span></button><button class="mode-choice" data-mode="light" type="button">☼ <span>Light</span></button></div>
+    <button class="reset-style" id="resetAppearance" type="button">↺ Reset appearance</button>
+  </section>
+  <div class="customizer-backdrop" id="customizerBackdrop"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
