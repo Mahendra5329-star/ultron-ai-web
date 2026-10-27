@@ -1,32 +1,19 @@
-# ULTRON AI — Website
+# ULTRON AI Website
 
-A responsive, dark sci-fi assistant interface designed to run in a mobile or desktop browser. This is a **website**, not an Android APK project.
+Static website with responsive design, voice input (where supported), text commands, quick launch tiles, and a light/dark toggle. No API key, server, Node.js, or APK is needed.
 
-## Features
-- Responsive mobile and desktop layout
-- Built-in commands: time, date, capabilities, technology fact
-- Opens supported websites: YouTube, Google, GitHub, Gmail, ChatGPT, Instagram and WhatsApp Web
-- Voice input where the browser supports the Web Speech API
-- Appearance customizer with red, cyan, violet, green, and amber accent colours
-- Dark/light display modes with preferences saved on the device
-- Interactive navigation, status reactor, settings panel, and responsive icon feedback
-- Spoken responses where speech synthesis is available
-- No build tools or package installation required
+## Commands
+- `open YouTube`, `open WhatsApp`, `open Instagram`, `open Google Maps`, `open Gmail`, `open Spotify`
+- `open Google`, `open Chrome`, `open GitHub`, `open Facebook`, `open Telegram`, `open Reddit`, `open Netflix`, `open Amazon`, `open LinkedIn`
+- `search Java tutorials`
+- `what time is it`, `what date is it`, `help`
 
-## Run locally
-Open `index.html` in a modern browser. Voice features generally require HTTPS or localhost and browser permission.
+## Publish on GitHub Pages
+1. Upload `index.html`, `styles.css`, `app.js`, and `README.md` into the repository root.
+2. Open **Settings → Pages**.
+3. Set **Source** to **Deploy from a branch**.
+4. Select branch `main` and folder `/ (root)`, then Save.
+5. Wait for GitHub to show the published URL.
 
-## Publish with GitHub Pages
-1. Create a GitHub repository, for example `ultron-ai-website`.
-2. Upload the contents of this ZIP so `index.html`, `style.css`, and `app.js` are in the repository root.
-3. Open **Settings → Pages**.
-4. Under Build and deployment, choose **Deploy from a branch**.
-5. Choose branch `main` and folder `/ (root)`, then Save.
-6. Wait for GitHub Pages to publish the site.
-
-The included GitHub Actions workflow also deploys the site to GitHub Pages after you enable Pages and select GitHub Actions as the deployment source.
-
-## Important limits
-This is a front-end website. A browser website cannot directly toggle Android system settings, read notifications, or control other apps. Those features require native Android capabilities and explicit permissions.
-
-The current assistant uses built-in local responses; it is not connected to Gemini yet. To add Gemini, create a backend/API service and store the Gemini API key as a server-side secret. **Never put a real API key in `app.js`, HTML, or any public GitHub repository.**
+## Browser limits
+This website cannot discover every installed app, guarantee app launch, toggle Android system settings, read notifications, or run commands in the background. It tries selected Android intent links and provides website fallbacks. The browser or Android may block links or show an app chooser. Voice recognition support varies by browser and typically needs HTTPS and microphone permission. If a link fails, use the fallback URL shown in the command result.
